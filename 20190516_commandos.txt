@@ -88,6 +88,14 @@ mysql> select * from clients;
 +----+----------+----------------+---------+--------+--------------+------+------+------+
 1 row in set (0.00 sec)
 
+mysql> create user 'aluno'@'localhost' identified by 'aluno123';
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> grant all on 2019A5P.* to 'aluno'@'localhost';
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> flush privileges;
+Query OK, 0 rows affected (0.00 sec)
 
 $ mkdir 20190516
 
