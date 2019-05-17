@@ -1,0 +1,5 @@
+Exercicio 01.
+    Use as operacoes do TensorFlow para produzir uma distribuicao gaussiana
+    Documentacao por ser encontrada em https://en.wikipedia.org/wiki/Normal_distribution
+
+

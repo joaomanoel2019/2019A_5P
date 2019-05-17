@@ -1,0 +1,18 @@
+Useful TensorFlow operators
+    The official documentation carefully lays out all available math ops:
+    https://www.tensorflow.org/api_guides/python/math_ops.
+    Some specific examples of commonly used operators include:
+
+    tf.add(x, y)        add two tensors of the same type, x + y
+    tf.subtract(x, y)   subtract tensors of the same type, x - y
+    tf.multiply(x, y)   multiply two tensors element-wise
+    tf.pow(x, y)        take the element-wise power of x to y
+    tf.exp(x)           equivalent topow(e, x), where e is Euler’s number (2.718...)
+    tf.sqrt(x)          equivalent topow(x, 0.5)
+    tf.div(x, y)        take the element-wise division of x and y
+    tf.truediv(x, y)    same astf.div, except casts the arguments as a float
+    tf.floordiv(x, y)   same astruediv, except rounds down the final answer into an integer
+    tf.mod(x, y)        takes the element-wise remainder from division
+
+*Fonte: Machine Learning with TensorFlow (pag 32)
+
