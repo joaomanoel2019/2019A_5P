@@ -1,0 +1,104 @@
+$ sudo apt-get install mysql-server mysql-client libmysqlclient-dev -y
+$ sudo mysql -u root -p
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| app2019a           |
+| mysql              |
+| performance_schema |
+| poc_dsv            |
+| product_dsv        |
+| sys                |
++--------------------+
+7 rows in set (0.10 sec)
+
+mysql> create schema 2019A5P;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| 2019A5P            |
+| app2019a           |
+| mysql              |
+| performance_schema |
+| poc_dsv            |
+| product_dsv        |
+| sys                |
++--------------------+
+8 rows in set (0.00 sec)
+
+mysql> use 2019A5P;
+Database changed
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> create table clients (
+    -> id int not null auto_increment,
+    -> name varchar(100),
+    -> cpf varchar(20),
+    -> address varchar(200),
+    -> number varchar(30),
+    -> neighborhood varchar(100),
+    -> city varchar(100),
+    -> cep varchar(10),
+    -> uf varchar(2),
+    -> primary key (id)
+    -> );
+Query OK, 0 rows affected (1.13 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_2019A5P |
++-------------------+
+| clients           |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> desc clients;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id           | int(11)      | NO   | PRI | NULL    | auto_increment |
+| name         | varchar(100) | YES  |     | NULL    |                |
+| cpf          | varchar(20)  | YES  |     | NULL    |                |
+| address      | varchar(200) | YES  |     | NULL    |                |
+| number       | varchar(30)  | YES  |     | NULL    |                |
+| neighborhood | varchar(100) | YES  |     | NULL    |                |
+| city         | varchar(100) | YES  |     | NULL    |                |
+| cep          | varchar(10)  | YES  |     | NULL    |                |
+| uf           | varchar(2)   | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+9 rows in set (0.01 sec)
+
+mysql> insert into clients (name, cpf) values ('Ze Maria', '123.321.258-45');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from clients;
++----+----------+----------------+---------+--------+--------------+------+------+------+
+| id | name     | cpf            | address | number | neighborhood | city | cep  | uf   |
++----+----------+----------------+---------+--------+--------------+------+------+------+
+|  1 | Ze Maria | 123.321.258-45 | NULL    | NULL   | NULL         | NULL | NULL | NULL |
++----+----------+----------------+---------+--------+--------------+------+------+------+
+1 row in set (0.00 sec)
+
+
+$ mkdir 20190516
+
+$ cd 20190516/
+
+$ gem install mysql2
+Building native extensions. This could take a while...
+Successfully installed mysql2-0.5.2
+Parsing documentation for mysql2-0.5.2
+Installing ri documentation for mysql2-0.5.2
+Done installing documentation for mysql2 after 0 seconds
+1 gem installed
+
+
